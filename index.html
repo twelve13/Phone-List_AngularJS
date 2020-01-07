@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="phonelistApp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Phone List</title>
+		<link href="https://fonts.googleapis.com/css?family=Girassol|Public+Sans&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="styles.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	</head>
+	<body ng-controller="phonelistController as vm">
+		<div id="outer-wrapper" ng-controller="ScrollController">
+			<div class="header">
+				<div id="logo-and-title" ng-click="gotoTop()">
+					<div id="logo"></div>
+					<div id="site-title">H.W. Phone List</div>
+				</div>			
+				<div id="hamburger" ng-click="gotoTop()">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<div id="searchbar" ng-click="gotoTop()">
+					<input id="search-input" type="text" ng-model="vm.search" placeholder="Search by name or title">
+				</div>
+			</div>
+			<div class="agencies">
+				<div ng-repeat="section in staff">
+					<div class="agency" ng-click="scrollToSection()">{{section.name}}</div>
+				</div>
+				<div class="agency" ng-click="scrollStudents()">Students</div>
+			</div>
+			
+				<div><a id="top">Top</a></div>
+				<div class="container">
+					<div class="row" id="search-results-container" ng-show="(vm.search).length > 0">
+						<div id="search-results-header">
+							<div class="col-xs-8 col-sm-10" id="search-results-heading">
+								<div>Search Results</div>
+								<div id="no-matches" ng-show="(allIndividuals | filter: vm.search)==0">No Matches</div>
+							</div>
+							<div class="col-xs-4 col-sm-2">
+								<div id="search-close" ng-click="vm.search=[]">close</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<div ng-repeat="individual in allIndividuals">
+									<table ng-repeat = "member in individual.members | filter: vm.search">
+											<tr class="first-row">
+												<td class="category">Name</td>
+												<td>{{member.name}}</td>
+											</tr>
+											<tr>
+												<td class="category">Title</td>
+												<td>{{member.title}}</td>
+											</tr>
+											<tr>
+												<td class="category">Office #</td>
+												<td>{{member.officeNumber}}</td>
+											</tr>
+											<tr>
+												<td class="category">Cell #</td>
+												<td>{{member.cellNumber}}</td>
+											</tr>
+										</table>
+								</div>
+							</div>
+						</div>
+					</div>
+						<div class="main row">
+							<div class="col-xs-12 col-sm-6 col-md-5" id="faculty-section">
+								<div ng-repeat="section in staff">
+									<div class="section" id="{{section.id}}">{{section.name}}</div>
+									<table ng-repeat="member in section.members">
+										<tr class="first row">
+											<td class="category">Name</td>
+											<td>{{member.name}}</td>
+										</tr>
+										<tr>
+											<td class="category">Title</td>
+											<td>{{member.title}}</td>
+										</tr>
+										<tr>
+											<td class="category">Office #</td>
+											<td>{{member.officeNumber}}</td>
+										</tr>
+										<tr>
+											<td class="category">Cell #</td>
+											<td>{{member.cellNumber}}</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-5 col-md-offset-1" id="students-section">
+								<div class="section" id="students">Students</div>
+								<div ng-repeat="house in students">
+									<h4>{{house.name}}</h4>
+									<p class="house-info">
+										<span class="house-colors">{{house.colors}}</span>
+										<span class="house-mascot">{{house.mascot}}</span>
+										<span class="house-characteristics">{{house.characteristics}}</span>
+									</p>
+									<table ng-repeat="member in house.members">
+										<tr class="first-row">
+											<td class="category">Name</td>
+											<td>{{member.name}}</td>
+										</tr>
+										<tr>
+											<td class="category">Office #</td>
+											<td>{{member.officeNumber}}</td>
+										</tr>
+										<tr>
+											<td class="category">Cell #</td>
+											<td>{{member.cellNumber}}</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+				</div>
+			
+		</div>
+		<script src="app.js"></script>
+	</body>
+</html>

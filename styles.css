@@ -1,0 +1,225 @@
+body {
+	font-family: 'Public Sans', sans-serif;
+	font-size: 16px;
+	line-height: 1.3;
+}
+
+.header {
+	background: rgb(195,236,236);
+	background: linear-gradient(192deg, rgba(195,236,236,1) 0%, rgba(255,222,233,1) 29%, rgba(224,195,252,1) 66%);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+}
+
+#logo-and-title {
+	align-items: center;
+	display: flex;
+	font-family: 'Girassol', cursive;
+	font-size: 28px;
+	padding: 10px 0;
+}
+
+#logo-and-title>div {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#site-title {
+	margin: 5px 0 0 5px;
+}
+
+#logo {
+	background: url("https://www.freepnglogos.com/uploads/hogwarts-logo-png/hogwarts-logo-black-white-10.png");
+	background-position: center center;
+	background-size: contain;
+	height: 120px;
+	width: 120px;
+}
+
+#hamburger {
+	align-content: space-around;
+	border: solid 2px black;
+	box-sizing: border-box;
+	display: flex;
+	flex-wrap: wrap;
+	height: 40px;
+	justify-content: center;
+	margin: 10px 20px;
+	padding: 3px 0;
+	width: 40px;
+}
+
+#hamburger:hover {
+	cursor: pointer;
+}
+
+#hamburger div {
+	background-color: black;
+	height: 4px;
+	width: 25px;
+}
+
+#searchbar {
+	padding: 2px 0;
+	text-align: center;
+	width: 100%;
+}
+
+#searchbar input {
+	border-radius: 15px;
+	margin-bottom: 10px;
+	padding: 1%;
+	width: 90%;
+}
+
+.agencies.show-list {
+	margin-top: 180px;
+}
+
+.agency {
+	background-color: rgba(224,195,252,1);
+	color: white;
+	font-size: 12px;
+	padding: 5px 0;
+	position: relative;
+	text-align: center;
+	top: 7px;
+}
+
+#search-results-container {
+	background-color: #f3f5f7;
+	padding: 100px 5px 30px 5px;
+}
+
+#search-results-header {
+	color: #224c7a;
+	margin-bottom: 15px;
+	padding-top: 10px;
+}
+
+#search-results-heading {
+	font-weight: bold;
+}
+
+#no-matches {
+	font-style: italic;
+	font-weight: 400;
+	margin-top: 10px;
+}
+
+#search-close {
+	text-declaration: underline;
+}
+
+#search-close:hover {
+	cursor: pointer;
+}
+
+.main {
+	margin-top: 60px;
+}
+
+table {
+	width: 100%;
+}
+
+table tr {
+	vertical-align: text-top;
+}
+
+tr.first-row>td {
+	padding-top: 10px;
+}
+
+tr.last-row>td:first-of-type {
+	border-bottom: solid 1px white;
+	padding-bottom: 10px;
+}
+
+tr td:first-of-type {
+	background-color: #2e67a3;
+	color: white;
+	padding-left: 10px;
+	width: 82px;
+}
+
+table.wide tr td:first-of-type {
+	width: 96px;
+}
+
+tr td:nth-of-type(2) {
+	color: #224c7a;
+	padding-left: 7px;
+}
+
+.section {
+	background-color: #224c7a;
+	background: linear-gradient(to right, #224c7a, #2e67a3);
+	border-radius: 0 25px 25px 0;
+	box-sizing: border-box;
+	color: white;
+	font-size: 18px;
+	margin: 10px 0;
+	padding: 5px;
+	width: 100%;
+}
+
+#students-section {
+	padding-bottom: 60px;
+}
+
+h4 {
+	color: #23717b;
+	font-size: 16px;
+	font-style: italic;
+	margin: 7px 0;
+	font-weight: normal;
+}
+
+.house-info {
+	color: #23717b;
+	font-size: 11px;
+	font-style: italic;
+	margin: 10px 0;
+}
+
+.house-colors, .house-mascot, .house-characteristics {
+	display: block;
+}
+
+@media only screen and (min-width: 992px) {
+	#subtitle {
+		font-size: 16px;
+	}
+
+	#searchbar {
+		margin-top: 10px;
+		width: 500px;
+	}
+
+	#hamburger {
+		order: 2;
+	}
+
+	#search-results-container {
+		padding: 110px 0 30px 10px;
+	}
+
+	.agencies.show-list {
+		margin-top: 140px;
+	}
+
+	.main {
+		margin-top: 25px;
+	}
+
+	#faculty-section {
+		padding-bottom: 60px;
+	}
+}
+
