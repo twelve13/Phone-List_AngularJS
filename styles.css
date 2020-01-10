@@ -108,13 +108,16 @@ body {
 
 #search-results-container {
 	background-color: #f3f5f7;
-	padding: 100px 5px 30px 5px;
+	padding: 50px 5px 30px 5px;
 }
 
 #search-results-header {
-	color: #224c7a;
+	color: #50f;
+	display: flex;
+	justify-content: space-between;
 	margin-bottom: 15px;
 	padding-top: 10px;
+	
 }
 
 #search-results-heading {
@@ -214,10 +217,6 @@ h4 {
 
 	#logo-and-title {
 		grid-row: 1 / span 4;
-	}
-
-	#search-results-container {
-		padding: 110px 0 30px 10px;
 	}
 
 	.agencies.show-list {

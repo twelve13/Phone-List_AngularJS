@@ -34,15 +34,11 @@
 			
 				
 				<div class="container">
-					<div class="row" id="search-results-container" ng-show="(vm.search).length > 0">
+					<!-- show the results container if anything is entered in the searchbar -->
+					<div id="search-results-container" ng-show="(vm.search).length > 0">
 						<div id="search-results-header">
-							<div class="col-xs-8 col-sm-10" id="search-results-heading">
-								<div>Search Results</div>
-								<div id="no-matches" ng-show="(allIndividuals | filter: vm.search)==0">No Matches</div>
-							</div>
-							<div class="col-xs-4 col-sm-2">
-								<div id="search-close" ng-click="vm.search=[]">close</div>
-							</div>
+							<div id="search-results-heading">Search Results</div>
+							<div id="search-close" ng-click="vm.search=[]">close</div>
 						</div>
 						<div class="row">
 							<div class="col-xs-12">
@@ -72,6 +68,7 @@
 								</div>
 							</div>
 						</div>
+					<div id="no-matches" ng-show="(allIndividuals | filter: vm.search)==0">No Matches Found</div>
 					</div>
 						<div class="main">
 							<div class="listings-panel" id="faculty-section">
