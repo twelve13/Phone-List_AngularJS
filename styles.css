@@ -132,52 +132,47 @@ body {
 }
 
 .main {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 	margin-top: 60px;
 }
 
-table {
+.listings-panel {
 	width: 100%;
 }
 
-table tr {
-	vertical-align: text-top;
-}
-
-tr.first-row>td {
-	padding-top: 10px;
-}
-
-tr.last-row>td:first-of-type {
-	border-bottom: solid 1px white;
-	padding-bottom: 10px;
-}
-
-tr td:first-of-type {
-	background-color: #2e67a3;
-	color: white;
-	padding-left: 10px;
-	width: 82px;
-}
-
-table.wide tr td:first-of-type {
-	width: 96px;
-}
-
-tr td:nth-of-type(2) {
-	color: #224c7a;
-	padding-left: 7px;
-}
-
 .section {
-	background-color: #224c7a;
-	background: linear-gradient(to right, #224c7a, #2e67a3);
+	background-color: #50f;
 	border-radius: 0 25px 25px 0;
 	box-sizing: border-box;
 	color: white;
 	font-size: 18px;
 	margin: 10px 0;
 	padding: 5px;
-	width: 100%;
+	width: 90%;
+}
+
+.listing {
+	margin-bottom: 20px;
+}
+
+.delineator {
+	color: #50f;
+	font-size: 24px;
+}
+
+.listing:last-of-type .delineator{
+	display: none;
+}
+
+.line-item {
+	display: flex;
+}
+
+.category {
+	color: #212121;
+	width: 100px;
 }
 
 #students-section {
@@ -227,6 +222,10 @@ h4 {
 
 	.main {
 		margin-top: 25px;
+	}
+
+	.listings-panel {
+		width: 45%;
 	}
 
 	#faculty-section {

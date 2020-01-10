@@ -46,53 +46,61 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<div ng-repeat="individual in allIndividuals">
-									<table ng-repeat = "member in individual.members | filter: vm.search">
-											<tr class="first-row">
-												<td class="category">Name</td>
-												<td>{{member.name}}</td>
-											</tr>
-											<tr>
-												<td class="category">Title</td>
-												<td>{{member.title}}</td>
-											</tr>
-											<tr>
-												<td class="category">Office #</td>
-												<td>{{member.officeNumber}}</td>
-											</tr>
-											<tr>
-												<td class="category">Cell #</td>
-												<td>{{member.cellNumber}}</td>
-											</tr>
-										</table>
+									<div class="listing" ng-repeat = "member in individual.members | filter: vm.search">
+										<div class="line-item">
+											<div class="category">Name</div>
+											<div>{{member.name}}</div>
+										</div>
+										<div class="line-item">
+											<div class="category">Title</div>
+											<div>{{member.title}}</div>
+										</div>
+										<div class="line-item">
+											<div class="category">Office #</div>
+											<div>{{member.officeNumber}}</div>
+										</div>
+										<div class="line-item">
+											<div class="category">Cell #</div>
+											<div>{{member.cellNumber}}</div>
+										</div>
+										<div class="line-item delineator">
+											<div class="category"></div>
+											<div>. . .</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-						<div class="main row">
-							<div class="col-xs-12 col-sm-6 col-md-5" id="faculty-section">
+						<div class="main">
+							<div class="listings-panel" id="faculty-section">
 								<div ng-repeat="section in staff">
 									<div class="section" id="{{section.id}}">{{section.name}}</div>
-									<table ng-repeat="member in section.members">
-										<tr class="first row">
-											<td class="category">Name</td>
-											<td>{{member.name}}</td>
-										</tr>
-										<tr>
-											<td class="category">Title</td>
-											<td>{{member.title}}</td>
-										</tr>
-										<tr>
-											<td class="category">Office #</td>
-											<td>{{member.officeNumber}}</td>
-										</tr>
-										<tr>
-											<td class="category">Cell #</td>
-											<td>{{member.cellNumber}}</td>
-										</tr>
-									</table>
+									<div class="listing" ng-repeat="member in section.members">
+										<div class="line-item">
+											<div class="category">Name</div>
+											<div>{{member.name}}</div>
+										</div>
+										<div class="line-item">
+											<div class="category">Title</div>
+											<div>{{member.title}}</div>
+										</div>
+										<div class="line-item">
+											<div class="category">Office #</div>
+											<div>{{member.officeNumber}}</div>
+										</div>
+										<div class="line-item line-item-cell">
+											<div class="category">Cell #</div>
+											<div>{{member.cellNumber}}</div>
+										</div>
+										<div class="line-item delineator">
+											<div class="category"></div>
+											<div>. . .</div>
+										</div>
+									</div>
 								</div>
 							</div>
-							<div class="col-xs-12 col-sm-6 col-md-5 col-md-offset-1" id="students-section">
+							<div class="listings-panel" id="students-section">
 								<div class="section" id="students">Students</div>
 								<div ng-repeat="house in students">
 									<h4>{{house.name}}</h4>
@@ -101,20 +109,24 @@
 										<span class="house-mascot">{{house.mascot}}</span>
 										<span class="house-characteristics">{{house.characteristics}}</span>
 									</p>
-									<table ng-repeat="member in house.members">
-										<tr class="first-row">
-											<td class="category">Name</td>
-											<td>{{member.name}}</td>
-										</tr>
-										<tr>
-											<td class="category">Office #</td>
-											<td>{{member.officeNumber}}</td>
-										</tr>
-										<tr>
-											<td class="category">Cell #</td>
-											<td>{{member.cellNumber}}</td>
-										</tr>
-									</table>
+									<div class="listing" ng-repeat="member in house.members">
+										<div class="line-item">
+											<div class="category">Name</div>
+											<div>{{member.name}}</div>
+										</div>
+										<div class="line-item">
+											<div class="category">Office #</div>
+											<div>{{member.officeNumber}}</div>
+										</div>
+										<div class="line-item">
+											<div class="category">Cell #</div>
+											<div>{{member.cellNumber}}</div>
+										</div>
+										<div class="line-item delineator">
+											<div class="category"></div>
+											<div>. . .</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
