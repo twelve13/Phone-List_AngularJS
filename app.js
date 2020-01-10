@@ -414,6 +414,8 @@ angular
 	.controller("phonelistController", ["$scope", "$filter", phonelistControllerFunction])
 	.controller("ScrollController", ["$scope", "$location", "$anchorScroll", scrollControllerFunction])
 
+	const agenciesList = document.querySelector(".agencies");
+
 	function phonelistControllerFunction ($scope, $filter) {
 		$scope.allIndividuals = individualsList;
 		$scope.staff = $filter("filter")(individualsList, {section: "staff"}, true);
@@ -429,32 +431,35 @@ angular
 			$anchorScroll();
 		}
 
+		$scope.handleHamburgerClick = function() {
+			$location.hash("top");
+			$anchorScroll();
+			agenciesList.classList.add("show-list");
+		}
+
 		$scope.scrollToSection = function() {
 			document.getElementById(this.section.id).scrollIntoView(true);
+			if (this.section.id == "faculty") {
+				window.scrollBy(0, -200);
+			}
+
 			if (window.innerWidth > 768) {
 				window.scrollBy(0, scrollLess);
 			}
 			else {
 				window.scrollBy(0, scrollMore);
 			}
+			agenciesList.classList.remove("show-list");
 		}
 
 		$scope.scrollStudents = function() {
 			document.getElementById("students").scrollIntoView(true);
 			if(window.innerWidth > 768) {
-				window.scrollBy(0, scrollLess);
+				window.scrollBy(0, -300);
 			}
 			else {
 				window.scrollBy(0, scrollMore);
 			}
+			agenciesList.classList.remove("show-list");
 		}
 	};
-
-	const hamburgerButton = document.querySelector("#hamburger");
-	const agenciesList = document.querySelector(".agencies");
-
-	const toggleList = function() {
-		agenciesList.classList.toggle("show-list")
-	}
-
-	hamburgerButton.addEventListener("click", toggleList);

@@ -10,12 +10,13 @@
 	</head>
 	<body ng-controller="phonelistController as vm">
 		<div id="outer-wrapper" ng-controller="ScrollController">
+			<div><a id="top">Top</a></div>
 			<div class="header">
 				<div id="logo-and-title" ng-click="gotoTop()">
 					<div id="logo"></div>
 					<div id="site-title">H.W. Phone List</div>
 				</div>			
-				<div id="hamburger" ng-click="gotoTop()">
+				<div id="hamburger" ng-click="handleHamburgerClick()">
 					<div></div>
 					<div></div>
 					<div></div>
@@ -31,7 +32,7 @@
 				<div class="agency" ng-click="scrollStudents()">Students</div>
 			</div>
 			
-				<div><a id="top">Top</a></div>
+				
 				<div class="container">
 					<div class="row" id="search-results-container" ng-show="(vm.search).length > 0">
 						<div id="search-results-header">

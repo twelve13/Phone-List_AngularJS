@@ -88,12 +88,16 @@ body {
 	width: 20px;
 }
 
+.agencies {
+	margin-top: 0;
+}
+
 .agencies.show-list {
 	margin-top: 180px;
 }
 
 .agency {
-	background-color: rgba(224,195,252,1);
+	background-color: #50f;
 	color: white;
 	font-size: 12px;
 	padding: 5px 0;
